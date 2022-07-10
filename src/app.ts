@@ -1,5 +1,6 @@
 import express, { Router } from 'express';
 import connectToDatabase from './connection';
+import { ErrorFunction } from './middlewares/error';
 
 class App {
   public app: express.Application;
@@ -19,6 +20,10 @@ class App {
 
   public addRouter(router: Router) {
     this.app.use(router);
+  }
+
+  public addErrorHandler(errorHandler: ErrorFunction) {
+    this.app.use(errorHandler);
   }
 
   public getApp() {
