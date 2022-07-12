@@ -21,6 +21,7 @@ class CarRouter extends GenericRouter<Car> {
 
     this._router.route(`${carRoute}/:id`)
       .get(this._controller.readOne.bind(this._controller))
+      .put(this._controller.update.bind(this._controller))
   }
 }
 

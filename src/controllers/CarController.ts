@@ -50,9 +50,22 @@ class CarController extends GenericController<Car> {
     }
   }
 
-  async update(_req: Request, _res: Response, _next: NextFunction)
+  async update(req: Request, res: Response, next: NextFunction)
     : Promise<void | Response> {
-    throw new Error(`Not Implemented ${this}`);
+    try {
+      const { id } = req.params;
+      const {
+        doorsQty, seatsQty, model, year, color, status, buyValue,
+      }: Car = req.body;
+
+      const updatedCar = await this._service.update(id, {
+        doorsQty, seatsQty, model, year, color, status, buyValue,
+      });
+
+      return res.status(200).json(updatedCar);
+    } catch (error) {
+      next(error);
+    }
   }
 
   async delete(_req: Request, _res: Response, _next: NextFunction)

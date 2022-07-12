@@ -41,6 +41,20 @@ class CarService extends GenericService<Car> implements Service<Car> {
     return car;
   }
 
+  async update(id: string, data: Car): Promise<void | Car | null> {
+    CarService.validateIdLength(id);
+
+    if (Object.values(data).every((value) => !value)) {
+      throw new BadRequestError('The data to update must be provided');
+    }
+
+    const updatedCar = await this._model.update(id, data);
+
+    if (!updatedCar) throw new NotFoundError(this._notFoundMessage);
+
+    return updatedCar;
+  }
+
 }
 
 export default CarService;
