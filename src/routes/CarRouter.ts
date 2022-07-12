@@ -15,6 +15,10 @@ class CarRouter extends GenericRouter<Car> {
   addRoutes(): void {
     const carRoute = this._routeName;
 
+    this._router.route(`${carRoute}/`)
+      .post(this._controller.create.bind(this._controller))
+      .get(this._controller.read.bind(this._controller));
+
     this._router.post(
       `${carRoute}/`,
       (req: Request, res: Response, next: NextFunction) =>

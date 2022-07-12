@@ -30,6 +30,7 @@ class CarController extends GenericController<Car> {
     : Promise<void | Response> {
     try {
       const cars = await this._service.read();
+
       return res.status(200).json(cars);
     } catch (error) {
       next(error);
