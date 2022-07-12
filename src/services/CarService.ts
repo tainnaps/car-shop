@@ -55,6 +55,13 @@ class CarService extends GenericService<Car> implements Service<Car> {
     return updatedCar;
   }
 
+  async delete(id: string): Promise<void | Car | null> {
+    CarService.validateIdLength(id);
+
+    const deletedCar = await this._model.delete(id);
+
+    if (!deletedCar) throw new NotFoundError(this._notFoundMessage);
+  }
 }
 
 export default CarService;

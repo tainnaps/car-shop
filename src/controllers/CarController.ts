@@ -68,9 +68,17 @@ class CarController extends GenericController<Car> {
     }
   }
 
-  async delete(_req: Request, _res: Response, _next: NextFunction)
+  async delete(req: Request, res: Response, next: NextFunction)
     : Promise<void | Response> {
-    throw new Error(`Not Implemented ${this}`);
+    try {
+      const { id } = req.params;
+
+      await this._service.delete(id);
+
+      return res.status(204).end();
+    } catch (error) {
+      next(error);
+    }
   }
 }
 

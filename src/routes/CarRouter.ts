@@ -1,4 +1,3 @@
-import { Request, Response, NextFunction } from 'express';
 import CarController from '../controllers/CarController';
 import { Car } from '../interfaces/CarInterface';
 import { Controller } from '../interfaces/ControllerInterface';
@@ -22,6 +21,7 @@ class CarRouter extends GenericRouter<Car> {
     this._router.route(`${carRoute}/:id`)
       .get(this._controller.readOne.bind(this._controller))
       .put(this._controller.update.bind(this._controller))
+      .delete(this._controller.delete.bind(this._controller));
   }
 }
 
