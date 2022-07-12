@@ -5,10 +5,19 @@ import GenericService from './GenericService';
 import carValidationSchema from '../validations/CarValidationSchema';
 import BadRequestError from '../errors/BadRequestError';
 import { Model } from '../interfaces/ModelInterface';
+import NotFoundError from '../errors/NotFoundError';
 
 class CarService extends GenericService<Car> implements Service<Car> {
+  private _notFoundMessage = 'Object not found';
+
   constructor(model: Model<Car> = new CarModel()) {
     super(model);
+  }
+
+  static validateIdLength(id: string): void {
+    if (id.length < 24) {
+      throw new BadRequestError('Id must have 24 hexadecimal characters');
+    }
   }
 
   async create(data: Car): Promise<void | Car> {
@@ -21,6 +30,17 @@ class CarService extends GenericService<Car> implements Service<Car> {
 
     return this._model.create({ ...data });
   }
+
+  async readOne(id: string): Promise<void | Car | null> {
+    CarService.validateIdLength(id);
+
+    const car = await this._model.readOne(id);
+
+    if (!car) throw new NotFoundError(this._notFoundMessage);
+
+    return car;
+  }
+
 }
 
 export default CarService;

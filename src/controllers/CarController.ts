@@ -37,9 +37,17 @@ class CarController extends GenericController<Car> {
     }
   }
 
-  async readOne(_req: Request, _res: Response, _next: NextFunction)
+  async readOne(req: Request, res: Response, next: NextFunction)
     : Promise<void | Response> {
-    throw new Error(`Not Implemented ${this}`);
+    try {
+      const { id } = req.params;
+
+      const car = await this._service.readOne(id);
+
+      return res.status(200).json(car);
+    } catch (error) {
+      next(error);
+    }
   }
 
   async update(_req: Request, _res: Response, _next: NextFunction)

@@ -19,11 +19,8 @@ class CarRouter extends GenericRouter<Car> {
       .post(this._controller.create.bind(this._controller))
       .get(this._controller.read.bind(this._controller));
 
-    this._router.post(
-      `${carRoute}/`,
-      (req: Request, res: Response, next: NextFunction) =>
-        this._controller.create(req, res, next),
-    );
+    this._router.route(`${carRoute}/:id`)
+      .get(this._controller.readOne.bind(this._controller))
   }
 }
 
