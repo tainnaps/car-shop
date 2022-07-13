@@ -17,7 +17,7 @@ describe('CarModel', () => {
       (carMongooseModel.create as SinonStub).restore();
     });
 
-    it('should return an object with the new car data', async () => {
+    it('should resolve the promise with the new car data', async () => {
       const newCar = await new CarModel(carMongooseModel).create(NEW_CAR_MOCK);
 
       expect(newCar).to.be.an('object');
