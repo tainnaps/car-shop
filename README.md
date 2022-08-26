@@ -1,0 +1,46 @@
+# Car Shop 🚘
+
+Projeto de uma API de loja de carros, utilizando o banco de dados MongoDB, desenvolvido durante o curso de Desenvolvimento Web Full Stack da [Trybe](https://www.betrybe.com/).
+
+A API foi construída com o paradigma de **Orientação a Objetos**, seguindo os princípios **SOLID** e **REST** e aplicando a **arquitetura MSC** (Model, Service, Controller).
+
+Suas principais funcionalidades são:
+- Busca, cadastro, atualização e remoção de carros da base de dados
+
+## Tecnologias
+As tecnologias utilizadas para o desenvolvimento da aplicação foram:
+- Node.js
+- TypeScript
+- MongoDB
+- Mongoose
+- Express
+- Zod
+- Mocha
+- Chai
+- Sinon
+
+## Executando o projeto
+Para executar o projeto, é necessário:
+
+1. Clonar este repositório
+  ```
+  git clone https://github.com/tainnaps/car-shop.git
+  ```
+2. Instalar as dependências na branch `main`
+  ```
+  npm install
+  ```
+3. Ter um servidor Mongo no computador
+
+4. Iniciar o servidor da aplicação
+  ```
+  npm run dev
+  ```
+  
+  ## Executando os testes
+  O projeto conta com testes unitários, desenvolvidos por mim usando `Mocha`, `Chai` e `Sinon`, para as camadas de Model, Service e Controller, cobrindo 62% dos arquivos dessas camadas.
+  
+  Para rodar os testes do projeto, é necessário executar o seguinte comando:
+  ```
+  npm run test:dev
+  ```
