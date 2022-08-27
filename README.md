@@ -27,9 +27,9 @@ Para executar o projeto, é necessário:
   ```
   npm install
   ```
-3. Ter um servidor Mongo no computador
+3. Ter um servidor `mongo` no computador
 
 4. Iniciar o servidor da aplicação
   ```
-  npm run dev
+  npm start
   ```
