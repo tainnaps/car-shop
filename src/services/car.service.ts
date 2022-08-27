@@ -1,11 +1,11 @@
-import { Car } from '../interfaces/CarInterface';
-import { Service } from '../interfaces/ServiceInterface';
-import CarModel from '../models/CarModel';
-import GenericService from './GenericService';
-import carValidationSchema from '../validations/CarValidationSchema';
-import BadRequestError from '../errors/BadRequestError';
-import { Model } from '../interfaces/ModelInterface';
-import NotFoundError from '../errors/NotFoundError';
+import { Car } from '../interfaces/car.interface';
+import { Service } from '../interfaces/service.interface';
+import CarModel from '../models/car.model';
+import GenericService from './generic.service';
+import carValidationSchema from '../validations/car.validation.schema';
+import BadRequestError from '../errors/badRequest.error';
+import { Model } from '../interfaces/model.interface';
+import NotFoundError from '../errors/notFound.error';
 
 class CarService extends GenericService<Car> implements Service<Car> {
   private _notFoundMessage = 'Object not found';

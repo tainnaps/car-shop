@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Controller } from '../interfaces/ControllerInterface';
+import { Controller } from '../interfaces/controller.interface';
 
 abstract class GenericRouter<T> {
   protected _routeName: string;

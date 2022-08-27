@@ -1,5 +1,5 @@
-import { Model } from '../interfaces/ModelInterface';
-import { Service } from '../interfaces/ServiceInterface';
+import { Model } from '../interfaces/model.interface';
+import { Service } from '../interfaces/service.interface';
 
 abstract class GenericService<T> implements Service<T> {
   protected _model: Model<T>;

@@ -1,6 +1,6 @@
 import App from './app';
-import errorMiddleware from './middlewares/error';
-import CarRouter from './routes/CarRouter';
+import errorMiddleware from './middlewares/error.middleware';
+import CarRouter from './routes/car.router';
 
 const server = new App();
 

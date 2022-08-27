@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import { Car } from '../interfaces/CarInterface';
-import { Service } from '../interfaces/ServiceInterface';
-import CarService from '../services/CarService';
-import GenericController from './GenericController';
+import { Car } from '../interfaces/car.interface';
+import { Service } from '../interfaces/service.interface';
+import CarService from '../services/car.service';
+import GenericController from './generic.controller';
 
 class CarController extends GenericController<Car> {
   constructor(service: Service<Car> = new CarService()) {

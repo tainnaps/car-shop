@@ -1,6 +1,6 @@
 import express, { Router } from 'express';
 import connectToDatabase from './connection';
-import { ErrorFunction } from './middlewares/error';
+import { ErrorFunction } from './middlewares/error.middleware';
 
 class App {
   public app: express.Application;

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { Controller } from '../interfaces/ControllerInterface';
-import { Service } from '../interfaces/ServiceInterface';
+import { Controller } from '../interfaces/controller.interface';
+import { Service } from '../interfaces/service.interface';
 
 abstract class GenericController<T> implements Controller<T> {
   protected _service: Service<T>;

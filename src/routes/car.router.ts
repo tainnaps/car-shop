@@ -1,7 +1,7 @@
-import CarController from '../controllers/CarController';
-import { Car } from '../interfaces/CarInterface';
-import { Controller } from '../interfaces/ControllerInterface';
-import GenericRouter from './GenericRouter';
+import CarController from '../controllers/car.controller';
+import { Car } from '../interfaces/car.interface';
+import { Controller } from '../interfaces/controller.interface';
+import GenericRouter from './generic.router';
 
 class CarRouter extends GenericRouter<Car> {
   constructor(
