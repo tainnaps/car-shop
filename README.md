@@ -15,9 +15,6 @@ As tecnologias utilizadas para o desenvolvimento da aplicação foram:
 - Mongoose
 - Express
 - Zod
-- Mocha
-- Chai
-- Sinon
 
 ## Executando o projeto
 Para executar o projeto, é necessário:
@@ -35,12 +32,4 @@ Para executar o projeto, é necessário:
 4. Iniciar o servidor da aplicação
   ```
   npm run dev
-  ```
-  
-  ## Executando os testes
-  O projeto conta com testes unitários, desenvolvidos por mim usando `Mocha`, `Chai` e `Sinon`, para as camadas de Model, Service e Controller, cobrindo 62% dos arquivos dessas camadas.
-  
-  Para rodar os testes do projeto, é necessário executar o seguinte comando:
-  ```
-  npm run test:dev
   ```
